@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0F3FA"
+    android:orientation="vertical">
+
+    <include layout="@layout/titleview_layout" />
+    <View style="@style/horizontal_line" />
+
+    <luo.library.base.widget.OverScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/size_5"
+                    android:layout_marginLeft="@dimen/size_16"
+                    android:layout_marginTop="@dimen/size_10"
+                    android:text="申请人身份证"
+                    android:textColor="@color/main_text_color" />
+
+                <ImageView
+                    android:id="@+id/iv_IDCard_positive"
+                    android:layout_width="240dp"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center"
+                    android:clickable="true"
+                    android:scaleType="fitCenter"
+                    android:src="@mipmap/icon_shenfenzheng" />
+
+                <ImageView
+                    android:id="@+id/iv_IdCard_negative"
+                    android:layout_width="240dp"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="3dp"
+                    android:clickable="true"
+                    android:scaleType="fitCenter"
+                    android:src="@mipmap/icon_shenfenzheng2" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="12dp"
+                android:background="@color/whites"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/size_16"
+                    android:layout_weight="0.3"
+                    android:text="客户姓名"
+                    android:textColor="@color/main_text_color" />
+
+                <com.sinosafe.xb.manager.widget.edit.ClearEditText
+                    android:id="@+id/et_customerName"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:hint="输入客户姓名"
+                    android:inputType="text"
+                    android:lines="1"
+                    android:paddingRight="@dimen/size_5"
+                    android:textSize="@dimen/font_14" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="@dimen/size_1"
+                android:background="@color/whites"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/size_16"
+                    android:layout_weight="0.3"
+                    android:text="身份证号"
+                    android:textColor="@color/main_text_color" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical">
+
+                    <com.sinosafe.xb.manager.widget.edit.BandCardEditText
+                        android:id="@+id/et_iDCardNumber"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="@dimen/size_5"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:digits="1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM"
+                        android:gravity="center_vertical"
+                        android:hint="输入身份证号码"
+                        android:inputType="number"
+                        android:lines="1"
+                        android:textSize="@dimen/font_14" />
+
+                    <ImageView
+                        android:id="@+id/iv_scan_idCard"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="@dimen/size_16"
+                        android:src="@mipmap/icon_saoyisao" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:paddingLeft="@dimen/size_16"
+                android:paddingTop="10dp"
+                android:text="@string/card_holder_prompt" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/whites"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/size_16"
+                    android:layout_weight="0.3"
+                    android:text="@string/card_holder"
+                    android:textColor="@color/main_text_color" />
+
+                <com.sinosafe.xb.manager.widget.edit.ClearEditText
+                    android:id="@+id/et_card_holder"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:hint="@string/enter_card_holder"
+                    android:inputType="text"
+                    android:lines="1"
+                    android:paddingRight="@dimen/size_5"
+                    android:textSize="@dimen/font_14" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="@dimen/size_1"
+                android:background="@color/whites"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/size_16"
+                    android:layout_weight="0.3"
+                    android:text="@string/card_number"
+                    android:textColor="@color/main_text_color" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical">
+
+                    <com.sinosafe.xb.manager.widget.edit.BandCardEditText
+                        android:id="@+id/et_card_number"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="@dimen/size_5"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:hint="@string/enter_card_number"
+                        android:inputType="number"
+                        android:lines="1"
+                        android:textSize="@dimen/font_14" />
+
+                    <ImageView
+                        android:id="@+id/iv_scan_bankcard"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="@dimen/size_16"
+                        android:src="@mipmap/icon_saoyisao" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="@dimen/size_10"
+                android:background="@color/whites"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/size_16"
+                    android:layout_weight="0.3"
+                    android:text="手机号"
+                    android:textColor="@color/main_text_color" />
+
+                <com.sinosafe.xb.manager.widget.edit.ClearEditText
+                    android:id="@+id/et_phone"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:hint="@string/enter_card_phone_number"
+                    android:inputType="number"
+                    android:lines="1"
+                    android:maxLength="11"
+                    android:textSize="@dimen/font_14" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="@dimen/size_1"
+                android:background="@color/whites"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/size_16"
+                    android:layout_weight="0.3"
+                    android:text="验证码"
+                    android:textColor="@color/main_text_color" />
+
+                <com.sinosafe.xb.manager.widget.edit.ClearEditText
+                    android:id="@+id/et_code"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.6"
+                    android:background="@null"
+                    android:hint="@string/enter_verification_code"
+                    android:inputType="number"
+                    android:lines="1"
+                    android:paddingRight="5dp"
+                    android:textSize="@dimen/font_14" />
+
+                <com.sinosafe.xb.manager.widget.VerificationCodeButton
+                    android:id="@+id/btn_get_code"
+                    style="@style/VerificationCodeButton" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/size_20"
+                android:layout_marginTop="@dimen/size_20"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/cb_agreement"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:button="@drawable/selector_agree_agreement"
+                    android:checked="true"
+                    android:gravity="center" />
+
+                <TextView
+                    android:id="@+id/tv_agreement"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_confirm_add"
+                style="@style/NormalButton"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/size_30"
+                android:layout_marginBottom="50dp"
+                android:text="下一步" />
+        </LinearLayout>
+    </luo.library.base.widget.OverScrollView>
+
+</LinearLayout>
